@@ -34,16 +34,16 @@ aliases:
 
 ## 论文信息
 
-| 项目        | 内容                                                                                                       |
-| --------- | -------------------------------------------------------------------------------------------------------- |
-| 标题        | IRT-Router: Effective and Interpretable Multi-LLM Routing via Item Response Theory                        |
-| 作者        | Wei Song, Zhenya Huang, Cheng Cheng, Weibo Gao, Bihan Xu, Guanhao Zhao, Fei Wang, Runze Wu                |
-| 年份        | 2025                                                                                                     |
-| 类型        | arXiv preprint                                                                                           |
-| DOI / URL | https://doi.org/10.48550/arXiv.2506.01048                                                                |
-| 代码        | https://github.com/Mercidaiha/IRT-Router                                                                 |
-| 相关主题      | [[llm-routing]]、[[llm-evaluation]]、[[item-response-theory]]、[[cost-aware-inference]]                     |
-| 阅读依据      | `/Users/shaeray/Downloads/Paper/IRT-Router- Effective and Interpretable Multi-LLM Routing via Item Response Theory/full.md` |
+| 项目      | 内容                                                                                                                        |
+| --------- | --------------------------------------------------------------------------------------------------------------------------- |
+| 标题      | IRT-Router: Effective and Interpretable Multi-LLM Routing via Item Response Theory                                          |
+| 作者      | Wei Song, Zhenya Huang, Cheng Cheng, Weibo Gao, Bihan Xu, Guanhao Zhao, Fei Wang, Runze Wu                                  |
+| 年份      | 2025                                                                                                                        |
+| 类型      | arXiv preprint                                                                                                              |
+| DOI / URL | https://doi.org/10.48550/arXiv.2506.01048                                                                                   |
+| 代码      | https://github.com/Mercidaiha/IRT-Router                                                                                    |
+| 相关主题  | [[llm-routing]]、[[llm-evaluation]]、[[item-response-theory]]、[[cost-aware-inference]]                                     |
+| 阅读依据  | `/Users/shaeray/Downloads/Paper/IRT-Router- Effective and Interpretable Multi-LLM Routing via Item Response Theory/full.md` |
 
 ## 一句话主题句
 
@@ -172,13 +172,13 @@ $$
 
 ## 实验设计
 
-| 部分     | 内容 |
-| -------- | ---- |
+| 部分     | 内容                                                                                                                              |
+| -------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | 数据集   | 8 个 ID 数据集：MMLU、CMMLU、ACLUE、ARC_C、Hotpot_QA、SQUAD、MATH、MBPP；4 个 OOD 数据集：CEVAL、Commonsense_QA、GSM8K、HumanEval |
-| 模型     | 20 个候选 LLM，另用 Claude 3.5 Haiku 20241022 测新 LLM generalization |
-| Baseline | Small LLM、Large LLM、HybridLLM、RouteLLM、RouterBench |
-| 指标     | Performance、Total Cost、Reward、Top-k routing accuracy、MAE、RMSE、AUC、ACC |
-| 设置     | $\alpha=0.8/0.5/0.2$ 控制性能和成本权重；embedding 默认 `bert-base-uncased`；warm-up 的 $k=5$ |
+| 模型     | 20 个候选 LLM，另用 Claude 3.5 Haiku 20241022 测新 LLM generalization                                                             |
+| Baseline | Small LLM、Large LLM、HybridLLM、RouteLLM、RouterBench                                                                            |
+| 指标     | Performance、Total Cost、Reward、Top-k routing accuracy、MAE、RMSE、AUC、ACC                                                      |
+| 设置     | $\alpha=0.8/0.5/0.2$ 控制性能和成本权重；embedding 默认 `bert-base-uncased`；warm-up 的 $k=5$                                     |
 
 ## 主要结果
 

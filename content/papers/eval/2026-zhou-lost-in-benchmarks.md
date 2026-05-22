@@ -37,17 +37,17 @@ aliases:
 
 ## 论文信息
 
-| 项目        | 内容                                                                                                                                                         |
+| 项目      | 内容                                                                                                                                                       |
 | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 标题        | Lost in Benchmarks? Rethinking Large Language Model Benchmarking with Item Response Theory                                                                 |
-| 作者        | Hongli Zhou, Hui Huang, Ziqing Zhao, Lvyuan Han, Huicheng Wang, Kehai Chen, Muyun Yang, Wei Bao, Jian Dong, Bing Xu, Conghui Zhu, Hailong Cao, Tiejun Zhao |
-| 年份        | 2026                                                                                                                                                       |
-| 类型        | arXiv preprint                                                                                                                                             |
+| 标题      | Lost in Benchmarks? Rethinking Large Language Model Benchmarking with Item Response Theory                                                                 |
+| 作者      | Hongli Zhou, Hui Huang, Ziqing Zhao, Lvyuan Han, Huicheng Wang, Kehai Chen, Muyun Yang, Wei Bao, Jian Dong, Bing Xu, Conghui Zhu, Hailong Cao, Tiejun Zhao |
+| 年份      | 2026                                                                                                                                                       |
+| 类型      | arXiv preprint                                                                                                                                             |
 | DOI / URL | https://doi.org/10.48550/arXiv.2505.15055                                                                                                                  |
 |           |                                                                                                                                                            |
-| 代码        | https://github.com/Joe-Hall-Lee/PSN-IRT                                                                                                                    |
-| 相关主题      | [[llm-evaluation]]、[[benchmark]]、[[item-response-theory]]、[[psychometrics]]                                                                                |
-| 阅读依据      | `/Users/shaeray/Downloads/qmd/lost/full.md`                                                                                                                |
+| 代码      | https://github.com/Joe-Hall-Lee/PSN-IRT                                                                                                                    |
+| 相关主题  | [[llm-evaluation]]、[[benchmark]]、[[item-response-theory]]、[[psychometrics]]                                                                             |
+| 阅读依据  | `/Users/shaeray/Downloads/qmd/lost/full.md`                                                                                                                |
 
 ## 一句话主题句
 

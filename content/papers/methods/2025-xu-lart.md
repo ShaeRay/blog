@@ -29,16 +29,16 @@ aliases:
 
 ## 论文信息
 
-| 项目        | 内容                                                                                                                       |
-| --------- | ------------------------------------------------------------------------------------------------------------------------ |
-| 标题        | Latency-Response Theory Model: Evaluating Large Language Models via Response Accuracy and Chain-of-Thought Length          |
-| 作者        | Zhiyu Xu, Jia Liu, Yixin Wang, Yuqi Gu                                                                                    |
-| 年份        | 2025                                                                                                                     |
-| 类型        | arXiv preprint                                                                                                           |
-| DOI / URL | https://doi.org/10.48550/arXiv.2512.07019                                                                                |
-| 代码        | https://github.com/Toby-X/Latency-Response-Theory-Model                                                                  |
-| 相关主题      | [[llm-evaluation]]、[[item-response-theory]]、[[chain-of-thought]]、[[computerized-adaptive-testing]]                       |
-| 阅读依据      | `/Users/shaeray/Downloads/Paper/Latency-Response Theory Model- Evaluating Large Language Models via Response Accuracy and Chain-of-Thought Length/full.md` |
+| 项目      | 内容                                                                                                                                                       |
+| --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 标题      | Latency-Response Theory Model: Evaluating Large Language Models via Response Accuracy and Chain-of-Thought Length                                          |
+| 作者      | Zhiyu Xu, Jia Liu, Yixin Wang, Yuqi Gu                                                                                                                     |
+| 年份      | 2025                                                                                                                                                       |
+| 类型      | arXiv preprint                                                                                                                                             |
+| DOI / URL | https://doi.org/10.48550/arXiv.2512.07019                                                                                                                  |
+| 代码      | https://github.com/Toby-X/Latency-Response-Theory-Model                                                                                                    |
+| 相关主题  | [[llm-evaluation]]、[[item-response-theory]]、[[chain-of-thought]]、[[computerized-adaptive-testing]]                                                      |
+| 阅读依据  | `/Users/shaeray/Downloads/Paper/Latency-Response Theory Model- Evaluating Large Language Models via Response Accuracy and Chain-of-Thought Length/full.md` |
 
 ## 一句话主题句
 
@@ -108,16 +108,16 @@ $$
 
 参数理解：
 
-| 参数 | 含义 | 我对它的理解 |
-| ---- | ---- | ------------ |
-| $\theta_i$ | latent ability | LLM 的潜在能力 |
-| $\tau_i$ | latent speed | CoT 生成速度；越高代表越快、CoT 越短 |
-| $a_j$ | accuracy discrimination | 题目能否区分不同能力模型 |
-| $b_j$ | difficulty/intercept | 题目正确率难度项，文中也转换成 $-b/a$ 解释 |
-| $\omega_j$ | CoT intensity | 题目基础 CoT 需求 |
-| $\varphi_j$ | CoT discrimination | CoT 长度对 latent speed 的敏感度 |
-| $\lambda_j$ | log-CoT residual variance | CoT 长度噪声 |
-| $\rho$ | ability-speed correlation | 能力和速度之间的相关性 |
+| 参数        | 含义                      | 我对它的理解                               |
+| ----------- | ------------------------- | ------------------------------------------ |
+| $\theta_i$  | latent ability            | LLM 的潜在能力                             |
+| $\tau_i$    | latent speed              | CoT 生成速度；越高代表越快、CoT 越短       |
+| $a_j$       | accuracy discrimination   | 题目能否区分不同能力模型                   |
+| $b_j$       | difficulty/intercept      | 题目正确率难度项，文中也转换成 $-b/a$ 解释 |
+| $\omega_j$  | CoT intensity             | 题目基础 CoT 需求                          |
+| $\varphi_j$ | CoT discrimination        | CoT 长度对 latent speed 的敏感度           |
+| $\lambda_j$ | log-CoT residual variance | CoT 长度噪声                               |
+| $\rho$      | ability-speed correlation | 能力和速度之间的相关性                     |
 
 我对这个模型的理解：标准 IRT 只用 $R_{ij}$，LaRT 额外用 $T_{ij}$。当 $\theta$ 和 $\tau$ 有相关性时，CoT 长度就能反过来帮助估计能力，尤其是在答对/答错已经接近饱和的场景。
 
@@ -184,14 +184,14 @@ $$
 
 ## 实验设计
 
-| 部分     | 内容 |
-| -------- | ---- |
-| 模拟实验 | 检验 SAEM、MAP 和 LaRT 相比 IRT 的有限样本估计效果 |
-| 真实数据 | 80+ 开源 LLM，预处理后 138 个 LLM；数学 benchmark 包括 MATH500、AMC23、AIME24、AIME25 |
-| Prompt | zero-shot CoT 和 one-shot CoT；最大输出 token 设为 10,240 |
-| Baseline | 标准 IRT |
-| 指标 | RMSE、MAE、预测误差、item efficiency、validity、LLM efficiency、置信区间 |
-| Active evaluation | 基于 Fisher information 自适应选择下一道题 |
+| 部分              | 内容                                                                                  |
+| ----------------- | ------------------------------------------------------------------------------------- |
+| 模拟实验          | 检验 SAEM、MAP 和 LaRT 相比 IRT 的有限样本估计效果                                    |
+| 真实数据          | 80+ 开源 LLM，预处理后 138 个 LLM；数学 benchmark 包括 MATH500、AMC23、AIME24、AIME25 |
+| Prompt            | zero-shot CoT 和 one-shot CoT；最大输出 token 设为 10,240                             |
+| Baseline          | 标准 IRT                                                                              |
+| 指标              | RMSE、MAE、预测误差、item efficiency、validity、LLM efficiency、置信区间              |
+| Active evaluation | 基于 Fisher information 自适应选择下一道题                                            |
 
 ## 主要结果
 
