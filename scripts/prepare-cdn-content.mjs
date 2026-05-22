@@ -1,4 +1,5 @@
 import { promises as fs } from "node:fs"
+import { createHash } from "node:crypto"
 import path from "node:path"
 
 const contentDir = path.resolve(process.env.CONTENT_DIR ?? "content")
@@ -77,8 +78,26 @@ function resolveContentRelativePath(rawTarget, markdownRelPath, mode = "markdown
   return { relPath: normalized, suffix }
 }
 
-function toCdnUrl(relPath, suffix = "") {
-  return `${cdnBaseUrl}/${encodeUrlPath(relPath)}${suffix}`
+async function hashFile(filePath) {
+  const buffer = await fs.readFile(filePath)
+  return createHash("sha256").update(buffer).digest("hex").slice(0, 12)
+}
+
+function withVersionSuffix(suffix, version) {
+  if (!version) {
+    return suffix
+  }
+
+  const hashIndex = suffix.indexOf("#")
+  const beforeHash = hashIndex === -1 ? suffix : suffix.slice(0, hashIndex)
+  const hash = hashIndex === -1 ? "" : suffix.slice(hashIndex)
+  const separator = beforeHash.includes("?") ? "&" : "?"
+
+  return `${beforeHash}${separator}v=${version}${hash}`
+}
+
+function toCdnUrl(relPath, suffix = "", version) {
+  return `${cdnBaseUrl}/${encodeUrlPath(relPath)}${withVersionSuffix(suffix, version)}`
 }
 
 function parseWikiImageEmbed(rawValue) {
@@ -114,7 +133,7 @@ function warnIfMissingImage(markdownRelPath, imageRelPaths, relPath, warnings) {
   }
 }
 
-function rewriteMarkdownImages(markdown, markdownRelPath, imageRelPaths, warnings) {
+function rewriteMarkdownImages(markdown, markdownRelPath, imageRelPaths, imageVersions, warnings) {
   const rewriteWikiImage = (match, rawValue) => {
     const { target, alt, width, height } = parseWikiImageEmbed(rawValue)
     const resolved = resolveContentRelativePath(target, markdownRelPath, "wiki")
@@ -125,7 +144,7 @@ function rewriteMarkdownImages(markdown, markdownRelPath, imageRelPaths, warning
 
     warnIfMissingImage(markdownRelPath, imageRelPaths, resolved.relPath, warnings)
 
-    const url = toCdnUrl(resolved.relPath, resolved.suffix)
+    const url = toCdnUrl(resolved.relPath, resolved.suffix, imageVersions.get(resolved.relPath))
     return width || height ? buildHtmlImage(url, alt, width, height) : `![${alt}](${url})`
   }
 
@@ -138,7 +157,7 @@ function rewriteMarkdownImages(markdown, markdownRelPath, imageRelPaths, warning
 
     warnIfMissingImage(markdownRelPath, imageRelPaths, resolved.relPath, warnings)
 
-    return `![${alt}](${toCdnUrl(resolved.relPath, resolved.suffix)})`
+    return `![${alt}](${toCdnUrl(resolved.relPath, resolved.suffix, imageVersions.get(resolved.relPath))})`
   }
 
   const rewriteLine = (line) =>
@@ -189,7 +208,12 @@ const imageFiles = allFiles.filter(({ relPath }) =>
   imageExtensions.has(path.posix.extname(relPath).toLowerCase()),
 )
 const imageRelPaths = new Set(imageFiles.map(({ relPath }) => relPath))
+const imageVersions = new Map()
 const warnings = new Set()
+
+for (const { absPath, relPath } of imageFiles) {
+  imageVersions.set(relPath, await hashFile(absPath))
+}
 
 let markdownCount = 0
 let copiedContentCount = 0
@@ -208,7 +232,13 @@ for (const { absPath, relPath } of allFiles) {
 
   if (extension === ".md") {
     const markdown = await fs.readFile(absPath, "utf8")
-    const rewritten = rewriteMarkdownImages(markdown, relPath, imageRelPaths, warnings)
+    const rewritten = rewriteMarkdownImages(
+      markdown,
+      relPath,
+      imageRelPaths,
+      imageVersions,
+      warnings,
+    )
     await ensureParent(destination)
     await fs.writeFile(destination, rewritten)
     markdownCount += 1

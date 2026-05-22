@@ -1,14 +1,42 @@
+# macOS
 .DS_Store
-.gitignore
-node_modules
-public
-prof
+.AppleDouble
+.LSOverride
+
+# Dependencies
+node_modules/
+
+# Quartz build output and caches
+public/
+.quartz-cache/
+.quartz-cdn-content/
+.quartz-cdn-upload/
 tsconfig.tsbuildinfo
-.obsidian
-.quartz-cache
-.quartz-cdn-content
-.quartz-cdn-upload
+prof/
+
+# Local editor and vault state
+.obsidian/
+.vscode/
+.idea/
+.trash/
+
+# Secrets and deployment-local config
+.env
+.env.*
+!.env.example
+.vercel/
 private/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Local tools
+.Rhistory
+.RData
+.Ruserdata
 .replit
 replit.nix
-.Rhistory
