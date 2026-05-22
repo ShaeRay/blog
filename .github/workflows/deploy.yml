@@ -51,7 +51,10 @@ jobs:
           path: cdn-repo
 
       - name: Sync images to CDN repository
-        run: rsync -av "$CDN_UPLOAD_DIR"/ cdn-repo/
+        run: |
+          mkdir -p cdn-repo/public
+          rm -rf cdn-repo/assets
+          rsync -av "$CDN_UPLOAD_DIR"/ cdn-repo/public/
 
       - name: Commit CDN assets
         working-directory: cdn-repo
