@@ -1,26 +1,26 @@
 ---
-title: "Lost in Benchmarks? Rethinking Large Language Model Benchmarking with Item Response Theory"
+title: Lost in Benchmarks? Rethinking Large Language Model Benchmarking with Item Response Theory
 created: 2026-05-22
 modified: 2026-05-22
 authors:
-  - "Zhou, Hongli"
-  - "Huang, Hui"
-  - "Zhao, Ziqing"
-  - "Han, Lvyuan"
-  - "Wang, Huicheng"
-  - "Chen, Kehai"
-  - "Yang, Muyun"
-  - "Bao, Wei"
-  - "Dong, Jian"
-  - "Xu, Bing"
-  - "Zhu, Conghui"
-  - "Cao, Hailong"
-  - "Zhao, Tiejun"
+  - Zhou, Hongli
+  - Huang, Hui
+  - Zhao, Ziqing
+  - Han, Lvyuan
+  - Wang, Huicheng
+  - Chen, Kehai
+  - Yang, Muyun
+  - Bao, Wei
+  - Dong, Jian
+  - Xu, Bing
+  - Zhu, Conghui
+  - Cao, Hailong
+  - Zhao, Tiejun
 year: 2026
-venue: "arXiv"
-doi: "https://doi.org/10.48550/arXiv.2505.15055"
-url: "https://arxiv.org/abs/2505.15055"
-pdf: "../assets/papers/lost-in-benchmarks/paper.pdf"
+venue: arXiv
+doi: https://doi.org/10.48550/arXiv.2505.15055
+url: https://arxiv.org/abs/2505.15055
+pdf: ../../assets/papers/lost-in-benchmarks/paper.pdf
 tags:
   - paper
   - llm-evaluation
@@ -37,17 +37,17 @@ aliases:
 
 ## 论文信息
 
-| 项目      | 内容                                                                                                                                                       |
+| 项目        | 内容                                                                                                                                                         |
 | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 标题      | Lost in Benchmarks? Rethinking Large Language Model Benchmarking with Item Response Theory                                                                 |
-| 作者      | Hongli Zhou, Hui Huang, Ziqing Zhao, Lvyuan Han, Huicheng Wang, Kehai Chen, Muyun Yang, Wei Bao, Jian Dong, Bing Xu, Conghui Zhu, Hailong Cao, Tiejun Zhao |
-| 年份      | 2026                                                                                                                                                       |
-| 类型      | arXiv preprint                                                                                                                                             |
+| 标题        | Lost in Benchmarks? Rethinking Large Language Model Benchmarking with Item Response Theory                                                                 |
+| 作者        | Hongli Zhou, Hui Huang, Ziqing Zhao, Lvyuan Han, Huicheng Wang, Kehai Chen, Muyun Yang, Wei Bao, Jian Dong, Bing Xu, Conghui Zhu, Hailong Cao, Tiejun Zhao |
+| 年份        | 2026                                                                                                                                                       |
+| 类型        | arXiv preprint                                                                                                                                             |
 | DOI / URL | https://doi.org/10.48550/arXiv.2505.15055                                                                                                                  |
-|           |
-| 代码      | https://github.com/Joe-Hall-Lee/PSN-IRT                                                                                                                    |
-| 相关主题  | [[llm-evaluation]]、[[benchmark]]、[[item-response-theory]]、[[psychometrics]]                                                                             |
-| 阅读依据  | `/Users/shaeray/Downloads/qmd/lost/full.md`                                                                                                                |
+|           |                                                                                                                                                            |
+| 代码        | https://github.com/Joe-Hall-Lee/PSN-IRT                                                                                                                    |
+| 相关主题      | [[llm-evaluation]]、[[benchmark]]、[[item-response-theory]]、[[psychometrics]]                                                                                |
+| 阅读依据      | `/Users/shaeray/Downloads/qmd/lost/full.md`                                                                                                                |
 
 ## 一句话主题句
 
@@ -122,8 +122,7 @@ $$
 
 ![[assets/papers/lost-in-benchmarks/figure-1-ranking-inconsistencies.jpg]]
 
-> Figure 1. Benchmark 排名不一致与弱区分度示意。  
-> Note. From "Lost in Benchmarks? Rethinking Large Language Model Benchmarking with Item Response Theory," by H. Zhou et al., 2026, arXiv. https://doi.org/10.48550/arXiv.2505.15055
+> Figure 1. Benchmark 排名不一致与弱区分度示意 [@zhou2026lost]。
 
 我从这张图读到的重点：
 
@@ -139,8 +138,7 @@ $$
 
 ![[assets/papers/lost-in-benchmarks/figure-2c-item-parameters.jpg]]
 
-> Figure 2. PSN-IRT 用独立网络估计模型能力和题目参数，再通过 IRT 公式预测答题结果。  
-> Note. From "Lost in Benchmarks? Rethinking Large Language Model Benchmarking with Item Response Theory," by H. Zhou et al., 2026, arXiv. https://doi.org/10.48550/arXiv.2505.15055
+> Figure 2. PSN-IRT 用独立网络估计模型能力和题目参数，再通过 IRT 公式预测答题结果 [@zhou2026lost]。
 
 我从这张图读到的重点：
 
@@ -162,8 +160,7 @@ $$
 
 ![[assets/papers/lost-in-benchmarks/figure-3f-fisher-information-bar.jpg]]
 
-> Figure 3. 11 个 LLM benchmark 的 difficulty、discriminability、guessing-rate、feasibility、LEH 和 Fisher information 分布。  
-> Note. From "Lost in Benchmarks? Rethinking Large Language Model Benchmarking with Item Response Theory," by H. Zhou et al., 2026, arXiv. https://doi.org/10.48550/arXiv.2505.15055
+> Figure 3. 11 个 LLM benchmark 的 difficulty、discriminability、guessing-rate、feasibility、LEH 和 Fisher information 分布 [@zhou2026lost]。
 
 我从这组图读到的重点：
 
@@ -176,8 +173,7 @@ $$
 
 ![[assets/papers/lost-in-benchmarks/figure-4-difficulty-vs-discriminability-scatter.jpg]]
 
-> Figure 4. 不同 benchmark 中 item difficulty 与 discriminability 的关系。  
-> Note. From "Lost in Benchmarks? Rethinking Large Language Model Benchmarking with Item Response Theory," by H. Zhou et al., 2026, arXiv. https://doi.org/10.48550/arXiv.2505.15055
+> Figure 4. 不同 benchmark 中 item difficulty 与 discriminability 的关系 [@zhou2026lost]。
 
 我从这张图读到的重点：
 
@@ -262,6 +258,6 @@ $$
 
 我的解释：小而高信息量的题集可能比大而混杂的题集更适合比较强模型。
 
-## APA7 参考文献
+## 参考文献
 
 [^ref]

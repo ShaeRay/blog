@@ -13,7 +13,9 @@ tags:
 
 - [[quartz中文使用指南|Quartz 中文使用指南]]：只讲你用 Obsidian 写完后，Quartz 这边怎么预览、构建、放图片和发布。
 - [[papers/论文阅读笔记模板|论文阅读笔记模板]]：已经排好论文阅读笔记结构，包含主题句、方法分析、原文图表、APA7 引用格式。
-- [[papers/2026-zhou-lost-in-benchmarks|Lost in Benchmarks 阅读笔记]]：使用 `full.md` 和论文原图整理的阅读笔记。
+- [[papers/eval/2026-zhou-lost-in-benchmarks|Lost in Benchmarks 阅读笔记]]：使用 `full.md` 和论文原图整理的阅读笔记。
+- [[papers/applications/2025-song-irt-router|IRT-Router 阅读笔记]]：把 IRT 用到多 LLM 路由里的应用型论文。
+- [[papers/methods/2025-xu-lart|LaRT 阅读笔记]]：把正确率和 CoT 长度联合建模的评测方法论文。
 - [[notes/hello-quartz|Hello Quartz]]：最小笔记写法、双链和标签。
 - [[notes/graph-and-backlinks|图谱与反向链接]]：看看页面之间如何自动连成网络。
 - [[notes/markdown-lab|Markdown 实验室]]：代码块、表格、任务列表、引用和数学公式。

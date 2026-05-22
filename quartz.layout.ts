@@ -35,7 +35,13 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Explorer(),
+    Component.Explorer({
+      mapFn: (node) => {
+        if (node.slug.startsWith("papers/") && !node.isFolder) {
+          node.displayName = node.slugSegment
+        }
+      },
+    }),
   ],
   right: [
     Component.Graph(),
@@ -59,7 +65,13 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
-    Component.Explorer(),
+    Component.Explorer({
+      mapFn: (node) => {
+        if (node.slug.startsWith("papers/") && !node.isFolder) {
+          node.displayName = node.slugSegment
+        }
+      },
+    }),
   ],
   right: [],
 }
