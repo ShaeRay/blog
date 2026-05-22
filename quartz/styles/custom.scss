@@ -1,3 +1,13 @@
 @use "./base.scss";
 
 // put your custom CSS here!
+
+.references.csl-bib-body {
+  margin-top: 1rem;
+}
+
+.references.csl-bib-body .csl-entry {
+  margin-bottom: 0.75rem;
+  padding-left: 2rem;
+  text-indent: -2rem;
+}
