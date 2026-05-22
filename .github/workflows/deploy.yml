@@ -15,13 +15,12 @@ concurrency:
 
 env:
   CDN_BASE_URL: https://cdn.shaeray.com
+  BUILD_CONTENT_DIR: /tmp/quartz-cdn-content
   CDN_UPLOAD_DIR: .quartz-cdn-upload
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    env:
-      BUILD_CONTENT_DIR: ${{ runner.temp }}/quartz-cdn-content
 
     steps:
       - name: Checkout blog
@@ -74,9 +73,10 @@ jobs:
       - name: Prepare SSH
         env:
           SERVER_HOST: ${{ secrets.SERVER_HOST }}
-          SERVER_PORT: ${{ secrets.SERVER_PORT || '22' }}
+          SERVER_PORT: ${{ secrets.SERVER_PORT }}
           SERVER_SSH_KEY: ${{ secrets.SERVER_SSH_KEY }}
         run: |
+          SERVER_PORT="${SERVER_PORT:-22}"
           mkdir -p ~/.ssh
           printf '%s\n' "$SERVER_SSH_KEY" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
@@ -86,9 +86,10 @@ jobs:
         env:
           SERVER_HOST: ${{ secrets.SERVER_HOST }}
           SERVER_PATH: ${{ secrets.SERVER_PATH }}
-          SERVER_PORT: ${{ secrets.SERVER_PORT || '22' }}
+          SERVER_PORT: ${{ secrets.SERVER_PORT }}
           SERVER_USER: ${{ secrets.SERVER_USER }}
         run: |
+          SERVER_PORT="${SERVER_PORT:-22}"
           rsync -az --delete \
             -e "ssh -i ~/.ssh/deploy_key -p $SERVER_PORT" \
             public/ "$SERVER_USER@$SERVER_HOST:${SERVER_PATH%/}/"
