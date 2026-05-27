@@ -8,6 +8,9 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [],
   footer: Component.Footer({
     showAttribution: false,
+    links: {
+      "皖ICP备2024042528号-2": "https://beian.miit.gov.cn/",
+    },
   }),
 }
 
